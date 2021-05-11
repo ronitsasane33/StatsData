@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>StatsData</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style-index.css') }}">
+</head>
+
+<body>
+  {% include '/partials/header.html' %}
+<!-- hero -->
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1 style="font-size:50px">Run Machine Learning models on datasets</h1>
+      <p>Without writing a single line of code</p>
+      <a type="button" class="htb btn btn-primary-outline" href="{{ url_for('iris')}}">
+        Run Iris Model
+      </a>
+    </div>
+  </div>
+  <!-- Grids -->
+  <div class="main-grids" style="margin: 30px;">
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="{{ url_for('iris')}}">
+            <img src="/static/images/iris.jpg" alt="Lights" style="width:100%; height: 300px;">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="{{ url_for('o2emission')}}">
+            <img src="/static/images/o2emission.jpg" alt="Nature" style="width:100%; height: 300px;">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg">
+            <img src="/static/images/housing.jpg" alt="Fjords" style="width:100%; height: 300px;">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/lights.jpg">
+            <img src="/static/images/mall.jpg" alt="Lights" style="width:100%; height: 300px;">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/nature.jpg">
+            <img src="/static/images/news.jpg" alt="Nature" style="width:100%; height: 300px;">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/fjords.jpg">
+            <img src="/static/images/wine-tasting-3.jpg" alt="Fjords" style="width:100%; height: 300px;">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include '/partials/footer.html' %}
+</body>
+</html>
