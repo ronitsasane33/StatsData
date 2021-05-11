@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Iris plant class predictor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<div>
+    {% include '/partials/header.html' %}
+</div>
+<section class="bgimage">
+<div class="container">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6" >
+  
+	  <h1 class="instructions">Predict iris flower class</h1>
+      <br>
+      <form action="{{ url_for('predictHousing')}}"method="post">
+        <input type="text" name="rooms" placeholder="Total number of rooms in home" required="required" />
+        <input type="text" name="Neighborhood poverty" placeholder="Neighborhood poverty level" required="required" />
+        <input type="text" name="Student-teacher ratio of schools" placeholder="Student-teacher ratio of nearby schools	" required="required" />
+        <button type="submit" class="btn btn-success">Predict</button>
+      </form>
+      <h3 class=""> {{ prediction_text }}</h3>
+  </div>
+</div>
+</section>
+<div>
+    {% include '/partials/footer.html' %} 
+  </div>
+</body>
+</html>
