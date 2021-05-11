@@ -1,3 +1,4 @@
+/* FOOTER============= */
 body { color: #ccc }
 .footer-widget p {
     margin-bottom: 27px;
@@ -5,7 +6,7 @@ body { color: #ccc }
 p {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
-    color:white;
+  color:white;
     line-height: 28px;
 }
 
