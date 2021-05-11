@@ -17,22 +17,9 @@
 </head>
 
 <body>
-  <nav class="navbar navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <!-- <a class="navbar-brand" href="#">
-          <img src="./logo1.png"  width="30" height="30" alt="logo">
-        </a> -->
-        <a class="navbar-brand" href="#">Stat Datas</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home</a></li>
-        <!-- <li><a href="#">Home</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li> -->
-      </ul>
-    </div>
-  </nav>
+<div>
+    {% include '/partials/header.html' %}
+</div>
 <section class="bgimage">
 <div class="container">
   <div class="col-lg-3"></div>
@@ -40,16 +27,19 @@
   
 	  <h1 class="instructions">Predict iris flower class</h1>
       <br>
-      <form action="{{ url_for('predict')}}"method="post">
+      <form action="{{ url_for('predictIris')}}"method="post">
         <input type="text" name="Sepal Width" placeholder="Sepal Width" required="required" />
         <input type="text" name="Sepal Height" placeholder="Sepal Height" required="required" />
         <input type="text" name="Petal Length" placeholder="Petal Length" required="required" />
         <input type="text" name="Petal Width" placeholder="Petal Width" required="required" />
         <button type="submit" class="btn btn-success">Predict</button>
       </form>
-      <h3 class="instructions"> {{ prediction_text }}</h3>
+      <h3 class=""> {{ prediction_text }}</h3>
   </div>
 </div>
 </section>
+<div>
+    {% include '/partials/footer.html' %} 
+  </div>
 </body>
 </html>

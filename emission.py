@@ -16,6 +16,6 @@ regressor = LinearRegression()
 
 regressor.fit(x, y)
 
-pickle.dump(regressor, open('model.pkl','wb'))
+pickle.dump(regressor, open(emissionModel.pkl','wb'))
 
 

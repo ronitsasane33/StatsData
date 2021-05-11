@@ -1,12 +1,15 @@
 /* FOOTER============= */
-body { color: #ccc }
+body { 
+    color: #ccc;
+    
+}
 .footer-widget p {
     margin-bottom: 27px;
 }
 p {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
-  color:white;
+    color:white;
     line-height: 28px;
 }
 
@@ -81,6 +84,7 @@ p {
     width: 80%; } } 
 
 .dk-footer {
+  margin-top: 100px;
   padding: 75px 0 0;
   background-color: #151414;
   position: relative;
