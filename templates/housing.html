@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Iris plant class predictor</title>
+  <title>Housing Prices</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -13,40 +13,37 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/housing.css') }}">
 </head>
-
 <body>
 <div>
     {% include '/partials/header.html' %}
 </div>
-<section class="bgimage">
-<div class="container">
-  <div class="col-lg-3"></div>
-  <div class="col-lg-6" >
-  
-	  <h1 class="instructions">Predict iris flower class</h1>
-      <br>
-      <form action="{{ url_for('predictHousing')}}" method="post">
-        <input type="text" name="rooms" placeholder="Total number of rooms in home" required="required" />
-        <input type="text" name="Neighborhood poverty" placeholder="Neighborhood poverty level" required="required" />
-        <input type="text" name="Student-teacher ratio of schools" placeholder="Student-teacher ratio of nearby schools	" required="required" />
-        <div class="form-group">
-          <label for="sel1">Select Model: (Default selected is best fitted model)</label>
-          <select class="form-control" id="sel1" name="model_type">
-            <option value="linear regression">Linear Regression</option>
-            <option value="decision tree" selected="selected">Decision Tree Regression</option>
-            <option value="Gradient Boost">Gradient Boost Regression</option>
-            <option value="SGD">SGD Regression</option>
-            <option value="XGBoost">XGBoost Regression</option>
-          </select>
-        </div>
-        <input type="submit" class="btn btn-info"></input></br>
-      </form>
-      <h3 class=""> {{ prediction_text }}</h3>
-  </div>
+<div class="hero-image">
+    <div class=" box1">
+        <h1 class="instructions">Boston Housing</h1>
+          <br>
+          <form action="{{ url_for('predictHousing')}}" method="post">
+            <input type="text" name="rooms" placeholder="Total number of rooms in home" required="required" />
+            <input type="text" name="Neighborhood poverty" placeholder="Neighborhood poverty level" required="required" />
+            <input type="text" name="Student-teacher ratio of schools" placeholder="Student-teacher ratio of nearby schools	" required="required" />
+            <br><br>
+            <div class="form-group">
+              <label for="sel1">Select Model: (Default is best fitted model)</label>
+              <select class="form-control" id="sel1" name="model_type">
+                <option value="linear regression">Linear Regression</option>
+                <option value="decision tree" selected="selected">Decision Tree Regression</option>
+                <option value="Gradient Boost">Gradient Boost Regression</option>
+                <option value="SGD">SGD Regression</option>
+                <option value="XGBoost">XGBoost Regression</option>
+              </select>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-info">Predict</button></br>
+          </form>
+          <h2 class=""> {{ prediction_text }}</h2>
+      </div>
 </div>
-</section>
 <div>
     {% include '/partials/footer.html' %} 
   </div>

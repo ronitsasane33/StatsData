@@ -4,10 +4,9 @@
 	width: 100%;
 }
 
-.instructions{
-	color: white;
+h1,h2,h3,h4,h5,p,label{
+	color: gray;
 }
-
 
 form{
 	margin: 10px;
