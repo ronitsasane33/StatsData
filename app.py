@@ -3,12 +3,20 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-emissionModel = pickle.load(open('static/PKL files/emissionModel.pkl', 'rb'))
-irisModel = pickle.load(open('static/PKL files/irisModel.pkl', 'rb'))
-housingModel = pickle.load(open('static/PKL files/housingModel.pkl', 'rb'))
-bestHousing = pickle.load(open('static/PKL files/housingBest.pkl', 'rb'))
-# Page URLs
+#Iris
+irisModel = pickle.load(open('static/PKL files/iris/irisModel.pkl', 'rb'))
 
+#emission
+emissionModel = pickle.load(open('static/PKL files/emission/emissionModel.pkl', 'rb'))
+
+# Housing
+housingLinearRegModel = pickle.load(open('static/PKL files/housing/housingModel.pkl', 'rb'))
+housingDecisionTree = pickle.load(open('static/PKL files/housing/decisionTree.pkl', 'rb'))
+housingXGB = pickle.load(open('static/PKL files/housing/housingXGB.pkl', 'rb')) 
+housingSGD = pickle.load(open('static/PKL files/housing/housingSGDRegressor.pkl', 'rb')) 
+housingGradientBoost= pickle.load(open('static/PKL files/housing/housingGradientBoost.pkl', 'rb')) 
+
+# Page URLs
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -51,11 +59,18 @@ def predictHousing():
     init_features = init_features[:3]
     init_features = [float(x) for x in init_features]
     final_features = [np.array(init_features)]
-    
-    if request.form['key'] == 'best run':
-        prediction = bestHousing.predict(final_features) 
+
+    if model_to_use == 'decision tree':
+        prediction = housingDecisionTree.predict(final_features) 
+    elif model_to_use == 'Gradient Boost':
+        prediction = housingGradientBoost.predict(final_features) 
+    elif model_to_use == "SGD":
+        prediction = housingSGD.predict(final_features)
+    elif model_to_use == "XGBoost":
+        prediction = housingXGB.predict(final_features)
     else:
-        prediction = housingModel.predict(final_features) 
+        prediction = housingLinearRegModel.predict(final_features) 
+
     return render_template('housing.html', prediction_text='Predicted Class: {}'.format(abs(prediction[0]))) 
     
 

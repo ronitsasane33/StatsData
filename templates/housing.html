@@ -31,8 +31,17 @@
         <input type="text" name="rooms" placeholder="Total number of rooms in home" required="required" />
         <input type="text" name="Neighborhood poverty" placeholder="Neighborhood poverty level" required="required" />
         <input type="text" name="Student-teacher ratio of schools" placeholder="Student-teacher ratio of nearby schools	" required="required" />
-        <input type="submit" class="btn btn-success" name = "key" value="predict"></input></br>
-        <input type="submit" class="btn btn-success" name = "key" value="best run"></input>
+        <div class="form-group">
+          <label for="sel1">Select Model: (Default selected is best fitted model)</label>
+          <select class="form-control" id="sel1" name="model_type">
+            <option value="linear regression">Linear Regression</option>
+            <option value="decision tree" selected="selected">Decision Tree Regression</option>
+            <option value="Gradient Boost">Gradient Boost Regression</option>
+            <option value="SGD">SGD Regression</option>
+            <option value="XGBoost">XGBoost Regression</option>
+          </select>
+        </div>
+        <input type="submit" class="btn btn-info"></input></br>
       </form>
       <h3 class=""> {{ prediction_text }}</h3>
   </div>
