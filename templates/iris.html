@@ -13,31 +13,37 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/iris.css') }}">
 </head>
 
 <body>
 <div>
     {% include '/partials/header.html' %}
 </div>
-<section class="bgimage">
-<div class="container">
-  <div class="col-lg-3"></div>
-  <div class="col-lg-6" >
-  
-	  <h1 class="instructions">Predict iris flower class</h1>
-      <br>
-      <form action="{{ url_for('predictIris')}}"method="post">
-        <input type="text" name="Sepal Width" placeholder="Sepal Width" required="required" />
-        <input type="text" name="Sepal Height" placeholder="Sepal Height" required="required" />
-        <input type="text" name="Petal Length" placeholder="Petal Length" required="required" />
-        <input type="text" name="Petal Width" placeholder="Petal Width" required="required" />
-        <button type="submit" class="btn btn-success">Predict</button>
-      </form>
-      <h3 class=""> {{ prediction_text }}</h3>
-  </div>
+<div class="hero-image">
+  <div class=" box1">
+      <h1 class="instructions">Iris Flowers</h1>
+        <br>
+        <form action="{{ url_for('predictIris')}}" method="post">
+          <input type="text" name="Sepal Width" placeholder="Sepal Width" required="required" />
+          <input type="text" name="Sepal Height" placeholder="Sepal Height" required="required" />
+          <input type="text" name="Petal Length" placeholder="Petal Length" required="required" />
+          <input type="text" name="Petal Width" placeholder="Petal Width" required="required" /> <br><br>
+          <div class="form-group">
+            <label for="sel1">Select Model: (Default is best fitted model)</label>
+            <select class="form-control" id="sel1" name="model_type">
+              <option value="linear regression">Linear Regression</option>
+              <option value="decision tree" selected="selected">Decision Tree Regression</option>
+              <option value="Gradient Boost">Gradient Boost Regression</option>
+              <option value="XGBoost">XGBoost Regression</option>
+            </select>
+          </div>
+          <br><br>
+          <button type="submit" class="btn btn-info">Predict</button></br>
+        </form>
+        <h2 class=""> {{ prediction_text }}</h2>
+    </div>
 </div>
-</section>
 <div>
     {% include '/partials/footer.html' %} 
   </div>

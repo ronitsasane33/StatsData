@@ -5,6 +5,10 @@ import pickle
 app = Flask(__name__)
 #Iris
 irisModel = pickle.load(open('static/PKL files/iris/irisModel.pkl', 'rb'))
+irisDecisionTree = pickle.load(open('static/PKL files/iris/irisDecisionTree.pkl', 'rb'))
+irisXGB = pickle.load(open('static/PKL files/iris/irisXGB.pkl', 'rb'))
+# irisSGD = pickle.load(open('static/PKL files/iris/irisSGD.pkl', 'rb'))
+irisGradientBoost = pickle.load(open('static/PKL files/iris/irisGradientBoost.pkl', 'rb'))
 
 #emission
 emissionModel = pickle.load(open('static/PKL files/emission/emissionModel.pkl', 'rb'))
@@ -42,10 +46,23 @@ def housing():
 # Iris route
 @app.route('/predictIris',methods=['POST'])
 def predictIris():
-    init_features = [float(x) for x in request.form.values()]
+    init_features = [x for x in request.form.values()]
+    model_to_use = init_features[-1] 
+    init_features = init_features[:4]
+    init_features = [float(x) for x in init_features]
     final_features = [np.array(init_features)]
-    prediction = irisModel.predict(final_features) 
-    return render_template('iris.html', prediction_text='Predicted Class: {}'.format(abs(prediction[0])))
+
+    if model_to_use == 'decision tree':
+        prediction = irisDecisionTree.predict(final_features) 
+    elif model_to_use == 'Gradient Boost':
+        prediction = irisGradientBoost.predict(final_features) 
+    elif model_to_use == "XGBoost":
+        prediction = irisXGB.predict(final_features)
+    else:
+        prediction = irisModel.predict(final_features) 
+    classes = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+    return render_template('iris.html', prediction_text='Class of Flower: {}'.format(classes[round(abs(prediction[0]))]))
+
 
 # CO2 Emission route
 @app.route('/predictEmission',methods=['POST'])
