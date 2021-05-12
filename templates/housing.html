@@ -27,11 +27,12 @@
   
 	  <h1 class="instructions">Predict iris flower class</h1>
       <br>
-      <form action="{{ url_for('predictHousing')}}"method="post">
+      <form action="{{ url_for('predictHousing')}}" method="post">
         <input type="text" name="rooms" placeholder="Total number of rooms in home" required="required" />
         <input type="text" name="Neighborhood poverty" placeholder="Neighborhood poverty level" required="required" />
         <input type="text" name="Student-teacher ratio of schools" placeholder="Student-teacher ratio of nearby schools	" required="required" />
-        <button type="submit" class="btn btn-success">Predict</button>
+        <input type="submit" class="btn btn-success" name = "key" value="predict"></input></br>
+        <input type="submit" class="btn btn-success" name = "key" value="best run"></input>
       </form>
       <h3 class=""> {{ prediction_text }}</h3>
   </div>

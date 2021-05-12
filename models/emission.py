@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 import pickle
 
-df = pd.read_csv("FuelConsumption.csv")
+df = pd.read_csv("static/data files/FuelConsumption.csv")
 
 
 cdf = df[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_COMB','CO2EMISSIONS']]
@@ -16,6 +16,6 @@ regressor = LinearRegression()
 
 regressor.fit(x, y)
 
-pickle.dump(regressor, open(emissionModel.pkl','wb'))
+pickle.dump(regressor, open('static/PKL files/emissionModel.pkl','wb'))
 
 
