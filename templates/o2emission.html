@@ -26,9 +26,9 @@
           <h1 class="instructions">CO2 emission of vehicles</h1>
             <br>
             <form action="{{ url_for('predictEmission')}}" method="post">
-              <input type="text" name="enginesize" placeholder="Engine Size" required="required" />
-              <input type="text" name="cylinders" placeholder="Cylinders" required="required" />
-              <input type="text" name="fuel" placeholder="Fuel" required="required" />
+              <input type="text" name="enginesize" placeholder="Size of the engine" required="required" />
+              <input type="text" name="cylinders" placeholder="Number of cCylinders" required="required" />
+              <input type="text" name="fuel" placeholder="Fuel Capacity" required="required" />
               <br><br>
               <div class="form-group">
                 <label for="sel1">Select Model: (Default is best fitted model)</label>

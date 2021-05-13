@@ -41,6 +41,10 @@ def o2emission():
 def housing():
     return render_template('housing.html')
 
+@app.route('/coming_soon')
+def coming_soon():
+    return render_template('ComingSoon.html')
+
 # URLS for processing Models
 
 # Iris route

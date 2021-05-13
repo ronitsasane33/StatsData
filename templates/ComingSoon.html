@@ -13,7 +13,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/coming soon.css') }}">
 </head>
 
 <body>
@@ -23,11 +23,7 @@
  <!-- hero -->
   <div class="hero-image">
     <div class="hero-text">
-      <h1 style="font-size:50px">Run Machine Learning models on datasets</h1>
-      <p>Without writing a single line of code</p>
-      <a type="button" class="htb btn btn-primary-outline" href="{{ url_for('housing')}}">
-        Explore Boston Housing Data
-      </a>
+      <h1 style="font-size:40px">The dataset you are requiesting is not currently available !!!<br> Please explore the following datasets.</h1>
     </div>
   </div>
   <!-- Grids -->
@@ -64,39 +60,6 @@
         </div>
       </div>
     </div>
-    <div class="row" style="margin:30px;">
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="{{ url_for('coming_soon')}}">
-            <img src="/static/images/mall.jpg" alt="Lights" style="width:100%; height: 300px;">
-            <div class="caption">
-              <p>Mall Dataset</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="{{ url_for('coming_soon')}}">
-            <img src="/static/images/news.jpg" alt="Nature" style="width:100%; height: 300px;">
-            <div class="caption">
-              <p>News Dataset</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="{{ url_for('coming_soon')}}">
-            <img src="/static/images/wine-tasting-3.jpg" alt="Fjords" style="width:100%; height: 300px;">
-            <div class="caption">
-              <p>Wine Dataset</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
   <div>
     {% include '/partials/footer.html' %} 
   </div>

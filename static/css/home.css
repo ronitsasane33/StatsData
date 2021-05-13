@@ -9,6 +9,13 @@ body {
 	letter-spacing:1.2px;
 }
 
+.caption p{
+	color: rgba(0, 0, 0, 0.795);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-align:center;
+	letter-spacing:1.2px;
+}
 .hero-image {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/hero.jpg");
 	height: 75%;
