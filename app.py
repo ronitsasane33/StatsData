@@ -88,7 +88,7 @@ def predictEmission():
     else:
         prediction = emissionModel.predict(final_features) 
 
-    return render_template('o2emission.html', prediction_text='Predicted CO2 Emission: ${}'.format(abs(prediction[0]))) 
+    return render_template('o2emission.html', prediction_text='Predicted CO2 Emission: {}'.format(round(abs(prediction[0]), 2))) 
 
 # Housing route
 @app.route('/predictHousing',methods=['POST'])
@@ -110,7 +110,7 @@ def predictHousing():
     else:
         prediction = housingLinearRegModel.predict(final_features) 
 
-    return render_template('housing.html', prediction_text='Predicted Price: ${}'.format(abs(prediction[0]))) 
+    return render_template('housing.html', prediction_text='Predicted Price: ${}'.format(round(abs(prediction[0]), 2))) 
     
 
 if __name__ == "__main__":
