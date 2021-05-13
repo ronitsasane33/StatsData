@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Old lappy data\NYU LEARNING\Sem 4\deploheroku-master\venv
+set VIRTUAL_ENV=C:\Old lappy data\NYU LEARNING\Sem 4\Final\StatsData\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
